@@ -1,2 +1,2 @@
 # JeliSocialApplication
-Social network implementation 
+Social network implementation with Spring MVC
