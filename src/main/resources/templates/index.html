@@ -1,0 +1,67 @@
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+
+<title>Welcome page</title>
+<head>
+    <link type="text/css" rel="stylesheet" href="/loginproperties/css/style.css" />
+</head>
+
+<body>
+<div class="fb-header-base">
+</div>
+<div class="fb-header">
+    <div id="img1" class="fb-header"><img src="/loginproperties/images/social.jpg" id = "socjpg" /></div>
+    <div id="imgtext" class="fb-header"><p id="intro7">Social Network by Ulan</p></div>
+    <div id="form1" class="fb-header">
+        <div th:if="${#request.getParameter('error') == 'true'}">
+            Login Failed!!!<br />
+            Reason : invalid username or login
+            <span th:if="${#session!= null and #session.getAttribute('SPRING_SECURITY_LAST_EXCEPTION') != null}"
+                  th:utext="${#session.getAttribute('SPRING_SECURITY_LAST_EXCEPTION').message}">
+                           Static summary
+                         </span>
+        </div>
+
+        Login<br>
+        <form name='f' th:action="@{/j_spring_security_check}" method='POST'>
+            <input placeholder="Username" type='text' name='username' value=''><br>
+        <input type="checkbox" name="remember-me" />keep me logged in
+
+    <div id="form2" class="fb-header">Password<br>
+        <input placeholder="Password" type='password' name='password' />
+    </div>
+</div>
+</div>
+<input type="submit" class="submit1" value="login" />
+</form>
+<div class="fb-body">
+    <div id="intro1" class="fb-body">Now online <br> It is amazing platform to stay connected with friends
+        <br> To continue login, if you don't have an account just register a new one it's free</div>
+    <div id="intro2" class="fb-body">Create an account</div>
+    <div id="intro3" class="fb-body">It's free and always will be.</div>
+    <div id="form3" class="fb-body">
+        <form action="javascript:alert('Your account registered!!! Please login to continue')" method="POST">
+        <input placeholder="Username" type="text" id="namebox2" name="Username" /><br>
+        <input placeholder="Emai" type="text" id="mailbox"  name="Email"data-validation="email"/><br>
+        <input placeholder="City" type="text" id="namebox" name="City"  />
+        <input placeholder="Country" type="text" id="namebox"  name="Country" /> <br>
+            <input placeholder="Password" type="password" id="mailbox" data-validation="length alphanumeric" /><br><br>
+        <input type="submit" class="button2" value="Create an account" />
+        </form>
+        <br><hr>
+    </div>
+</div>
+<div class="fb-body-footer">
+    <div id="fb-body-footer-base" class="fb-body-footer"><hr>
+        <p id="intro6">All rights reserved	&copy; Almaty,2019  &nbsp;&nbsp; Designed by Duisek Ulan<p>
+    </div>
+</div>
+</body>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js"></script>
+<script>
+    $.validate({
+        lang: 'en'
+    });
+</script>
+</html>
+

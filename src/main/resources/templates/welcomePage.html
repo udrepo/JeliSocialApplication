@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:utext="${title}"></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <style>
+        body,h1 {font-family: "Raleway", sans-serif}
+        body, html {height: 100%}
+        .bgimg {
+            background-image: url(https://pixelz.cc/wp-content/uploads/2016/11/annapurna-massif-himalayas-nepal-4k-wallpaper.jpg);
+            min-height: 100%;
+            background-position: center;
+            background-size: cover;
+        }
+    </style>
+</head>
+
+<body>
+
+<!--<h2>Message : <span th:utext="${message}"></span></h2>-->
+
+
+<div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
+    <div class="w3-display-middle">
+        <h1 class="w3-jumbo w3-animate-top">Social Network by Ulan</h1>
+        <hr class="w3-border-grey" style="margin:auto;width:40%">
+        <p class="w3-large w3-center">Now online</p>
+        <p class="w3-large w3-center">It is amazing platform to stay connected with friends</p>
+        <p class="w3-large w3-center">To continue login, if you don't have an account click register button</p>
+
+        <div class="w3-bar w3-black" th:if="${#request.userPrincipal == null}">
+            <button class="w3-button w3-left"><a  th:href="@{/loginpage}">Login</a></button>
+            <button class="w3-button w3-right"><a th:href="@{/register}">Register</a></button>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
+</body>
+</html>

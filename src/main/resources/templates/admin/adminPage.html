@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:utext="${title}"></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    </style>
+</head>
+<body>
+<!-- Include _menu.html -->
+<th:block th:include="/_menu"></th:block>
+
+<h2>Admin Page</h2>
+<h3>Welcome :<span th:utext="${#request.userPrincipal.name}"></span></h3>
+<b>This is protected page!</b><br>
+<b>System users</b>
+<table>
+    <tr>
+        <th>username</th>
+        <th>email</th>
+        <th>city</th>
+        <th>Country</th>
+        <th>Phone number</th>
+    </tr>
+
+    <div class="userlist"></div>
+</table>
+
+<br/><br/>
+
+<table>
+    <div class="users_roles"></div>
+</table>
+
+</body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="/../loginproperties/js/useradmin.js"></script>
+</html>
