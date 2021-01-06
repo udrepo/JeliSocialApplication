@@ -5,7 +5,7 @@ import javax.validation.constraints.Size;
 
 @Entity
 @Table(name = "posts")
-public class Post extends AuditModel {
+public class Post{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
